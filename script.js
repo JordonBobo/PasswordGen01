@@ -11,7 +11,6 @@ function writePassword() {
 
 
 // Asks user what kind of password they need and generates it
-
 function generatePassword() {
 
 // Asks user how many characters to use, number can only be between 8-128
@@ -40,7 +39,6 @@ if (isNaN(limiter) == false) {
   return passWord.join('') + passWord2.join('')
 }
 
-
 //  Adds the required data types to the pool of possible characters,
 //  and guarantees at least 1 of each data type is in the final password
 function genPossible(from, to, guarantee) {
@@ -60,8 +58,6 @@ function assemble(source,result,size) {
   }
   return result;
 }
-
-
 
 
 // Possible data types to be used in the password
