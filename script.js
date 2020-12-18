@@ -10,11 +10,6 @@ function writePassword() {
 }
 
 
-
-
-
-
-
 // Asks user what kind of password they need and generates it
 
 function generatePassword() {
@@ -26,7 +21,8 @@ else if (limiter < 8) {limiter = 8}
 else if (limiter > 7 && limiter < 129) {limiter = limiter}
 else {alert ("That is not a valid number. Please choose a positive whole number which is not spelled out")}
 
-// Asks user which data types are needed
+// Asks user which data types are needed, if they gave a valid number
+if (isNaN(limiter) == false) {
     var numbers1 = confirm ("numbers?") 
     if (numbers1 == true) {genPossible(number, combo, passWord2)}
     var letters1 = confirm ("lower case letters?") 
@@ -35,7 +31,7 @@ else {alert ("That is not a valid number. Please choose a positive whole number 
     if (letters2 == true) {genPossible(upLetter, combo, passWord2)}
     var symbols1 = confirm ("symbols?") 
     if (symbols1 == true) {genPossible(spclChar, combo, passWord2)}
-
+}
 
 // updates the two arrays that will make up the final password
     assemble(combo, passWord, limiter)
@@ -58,12 +54,13 @@ function genPossible(from, to, guarantee) {
 // Assemble the password from the combo array, 
 // minus the number of characters already added to the final password.
 
-function assemble(x,y,z) {
-  for(let n = 0; n < z - passWord2.length; n++) {
-        y.push(x[Math.floor(Math.random() * x.length)])
+function assemble(source,result,size) {
+  for(let i = 0; i < size - passWord2.length; i++) {
+        result.push(source[Math.floor(Math.random() * source.length)])
   }
-  return y;
+  return result;
 }
+
 
 
 
@@ -77,22 +74,5 @@ var spclChar = ["!","#","$","&","(",")","*","+","-",".","/",":",";","<","=",">",
 var combo = []
 var passWord = []
 var passWord2 = []
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
