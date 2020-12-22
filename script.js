@@ -2,12 +2,33 @@
 document.querySelector("#generate").addEventListener("click", writePassword);
 
 
+
 // Generates the password and publishes it on the page
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
   passwordText.value = password;
 }
+
+
+console.log(document.querySelector('textarea'))
+
+
+//var x5 = document.querySelector("#password");
+//var y5 = document.createElement('y6');
+//y5.innerHTML = password;
+//x5.parentNode.replaceChild(y5, x5);
+
+//var x5 = document.querySelector('textarea');
+//var y5 = document.createElement('p');
+//y5.innerHTML = '<b>hello world</b>';
+//x5.parentNode.replaceChild(y5, x5);
+
+//var x2 = document.createElement("x3");
+//var y2 = document.createTextNode("y3");
+//x2.appendChild(y2);
+//var z2 = document.querySelector("#password");
+//z2.replaceChild(x2, z2.childNodes[0]);
 
 
 // Asks user what kind of password they need and generates it
